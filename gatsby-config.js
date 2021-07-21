@@ -4,26 +4,20 @@ require('dotenv').config({
 
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    title: `Beaucatcher Wines`,
+    description: `Beaucatcher wine merchants.`,
     author: `@gatsbyjs`,
     siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sass`,
     `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `pagees`,
-        path: `${__dirname}/src/pages`,
       },
     },
     `gatsby-transformer-sharp`,
@@ -41,7 +35,7 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-source-shopify",
+      resolve: `gatsby-source-shopify`,
       options: {
         password: process.env.SHOPIFY_ADMIN_PASSWORD,
         storeUrl: process.env.SHOPIFY_STORE_URL

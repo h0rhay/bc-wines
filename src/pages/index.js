@@ -1,15 +1,18 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { getImage, GatsbyImage } from 'gatsby-plugin-image'
+import Layout from '../components/Layout'
+import SiteWidth from '../components/SiteWidth'
+import ProductTile from '../components/ProductTile'
 
 export const query = graphql`
   {
-    allShopifyProduct {
+    allShopifyProduct(sort: { fields: [title] }) {
       nodes {
         title
         description
         id
         totalInventory
+        handle
         images {
           gatsbyImageData
         }
@@ -26,35 +29,24 @@ export const query = graphql`
   }
 `
 
-const Product = ({ product }) => {
-  return ( 
-    <div>
-      {console.log(product)}
-      <GatsbyImage image={getImage(product.images[0])} alt={product.title.toLowerCase()}/>
-      <h2>{product.title}</h2>
-      <p>{product.description}</p>
-      <p>£ {product.variants[0]['price']}</p>
-      <p>SKU {product.variants[0]['sku']}</p>
-      <p>Quantity available: {product.totalInventory}</p>
-    </div>
-  )
-}
+
 
 const stockCheckThenRenderProduct = (product) => {
   return (
-    product.totalInventory ? <Product key={product.id} product={product}/> : null
+    product.totalInventory ? <ProductTile key={product.id} product={product}/> : null
   )
 }
 
 const Index = ({ data }) => {
   return (
-    <div>
-      <h1>Beaucatcher Wines</h1>
+    <Layout>
+      <SiteWidth>
       {/* <pre>
         {JSON.stringify(data, null, 2)}
       </pre> */}
-      {data.allShopifyProduct.nodes.map(product => stockCheckThenRenderProduct(product))}
-    </div>
+        {data.allShopifyProduct.nodes.map(product => stockCheckThenRenderProduct(product))}
+      </SiteWidth>
+    </Layout>
   )
 }
  
