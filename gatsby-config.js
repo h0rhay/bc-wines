@@ -7,7 +7,7 @@ module.exports = {
     title: `Beaucatcher Wines`,
     description: `Beaucatcher wine merchants.`,
     author: `@gatsbyjs`,
-    siteUrl: ` `,
+    siteUrl: `https://bcwines.gatsbyjs.io/`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
