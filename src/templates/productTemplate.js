@@ -1,18 +1,16 @@
 import React from 'react'
-import { getImage, GatsbyImage } from 'gatsby-plugin-image'
+import SiteWidth from '../components/siteWidth'
+import Layout from '../components/layout'
+import ProductTile from '../components/productTile'
 
 const Product = ({ pageContext }) => {
     const { product } = pageContext
     return (
-        <div>
-            {console.log(product)}
-            <GatsbyImage image={getImage(product.images[0])} alt={product.title.toLowerCase()}/>
-            <h2>{product.title}</h2>
-            <p>{product.description}</p>
-            <p>£ {product.variants[0]['price']}</p>
-            <p>SKU {product.variants[0]['sku']}</p>
-            <p>Quantity available: {product.totalInventory}</p>
-        </div>
+        <Layout>
+            <SiteWidth>
+                <ProductTile product={product} productPage />
+            </SiteWidth>
+        </Layout>
     )
 }
  
