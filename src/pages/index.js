@@ -1,8 +1,8 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import Layout from '../components/Layout'
-import SiteWidth from '../components/SiteWidth'
-import ProductTile from '../components/ProductTile'
+import Layout from '../components/layout'
+import SiteWidth from '../components/siteWidth'
+import ProductTile from '../components/productTile'
 
 export const query = graphql`
   {

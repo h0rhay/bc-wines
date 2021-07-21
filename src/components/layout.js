@@ -2,11 +2,11 @@ import * as React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
-import Header from "./Header"
-import SiteWidth from "./SiteWidth"
-import styledComponentsCjs from "styled-components"
+import Header from "./header"
+import SiteWidth from "./siteWidth"
+import styled from "styled-components"
 
-const Footerwrap = styledComponentsCjs.footer`
+const Footerwrap = styled.footer`
   padding: var(--unit) 0;
   background: #e9e9e9;
 `

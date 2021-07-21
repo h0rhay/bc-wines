@@ -1,7 +1,7 @@
 import * as React from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
-import SiteWidth from "./SiteWidth"
+import SiteWidth from "./siteWidth"
 import styledComponentsCjs from "styled-components"
 
 const HeaderWrap = styledComponentsCjs.header`
