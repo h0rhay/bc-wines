@@ -1,5 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import Seo from '../components/seo'
 import Layout from '../components/layout'
 import SiteWidth from '../components/siteWidth'
 import ProductTile from '../components/productTile'
@@ -40,6 +41,7 @@ const stockCheckThenRenderProduct = (product) => {
 const Index = ({ data }) => {
   return (
     <Layout>
+      <Seo title='Homepage' />
       <SiteWidth>
       {/* <pre>
         {JSON.stringify(data, null, 2)}

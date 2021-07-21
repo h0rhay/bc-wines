@@ -6,7 +6,7 @@ module.exports = {
   siteMetadata: {
     title: `Beaucatcher Wines`,
     description: `Beaucatcher wine merchants.`,
-    author: `@gatsbyjs`,
+    author: `George Clark`,
     siteUrl: `https://bcwines.gatsbyjs.io/`,
   },
   plugins: [
