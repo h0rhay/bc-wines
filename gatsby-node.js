@@ -1,7 +1,41 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.com/docs/node-apis/
- */
+// This file currently builds pages from the graphql data returned from the gatsby-source-shopify plugin
 
-// You can delete this file if you're not using it
+const path = require('path')
+
+exports.createPages = async ({ graphql, actions }) => {
+    const { createPage } = actions
+    const result = await graphql(`
+        {
+            allShopifyProduct {
+                edges {
+                  node {
+                    title
+                    handle
+                    description
+                    totalInventory
+                    images {
+                      gatsbyImageData
+                    }
+                    variants {
+                      price
+                      weight
+                      productId
+                      id
+                      sku
+                      availableForSale
+                    }
+                  }
+                }
+            }
+        }
+    `)
+    result.data.allShopifyProduct.edges.forEach(({ node }) => {
+        createPage({
+            path: `/wines/${node.handle}`,
+            component: path.resolve(`./src/templates/productTemplate.js`),
+            context: {
+                product: node
+            }
+        })
+    })
+}
