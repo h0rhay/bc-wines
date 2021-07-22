@@ -1,15 +1,15 @@
-import * as React from "react"
-import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
+import * as React from 'react';
+import PropTypes from 'prop-types';
+import { useStaticQuery, graphql } from 'gatsby';
 
-import Header from "./header"
-import SiteWidth from "./siteWidth"
-import styled from "styled-components"
+import styled from 'styled-components';
+import Header from './header';
+import SiteWidth from './siteWidth';
 
 const Footerwrap = styled.footer`
   padding: var(--unit) 0;
   background: #e9e9e9;
-`
+`;
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -20,7 +20,7 @@ const Layout = ({ children }) => {
         }
       }
     }
-  `)
+  `);
 
   return (
     <>
@@ -34,11 +34,11 @@ const Layout = ({ children }) => {
         </SiteWidth>
       </Footerwrap>
     </>
-  )
-}
+  );
+};
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-}
+};
 
-export default Layout
+export default Layout;
