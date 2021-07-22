@@ -1,10 +1,10 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
-import styledComponentsCjs from 'styled-components';
+import styled from 'styled-components';
 import SiteWidth from './siteWidth';
 
-const HeaderWrap = styledComponentsCjs.header`
+const HeaderWrap = styled.header`
   padding: var(--unit) 0;
   background: #e5e5e5;
 `;
