@@ -1,6 +1,6 @@
 require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
-})
+});
 
 module.exports = {
   siteMetadata: {
@@ -11,6 +11,7 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-styled-components`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-image`,
     {
@@ -38,7 +39,7 @@ module.exports = {
       resolve: `gatsby-source-shopify`,
       options: {
         password: process.env.SHOPIFY_ADMIN_PASSWORD,
-        storeUrl: process.env.SHOPIFY_STORE_URL
+        storeUrl: process.env.SHOPIFY_STORE_URL,
       },
     },
     `gatsby-plugin-gatsby-cloud`,
@@ -46,4 +47,4 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
-}
+};

@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "George Clark <h0rhay>",
   "dependencies": {
+    "babel-plugin-styled-components": "^1.13.2",
     "dotenv": "^10.0.0",
     "gatsby": "^3.9.1",
     "gatsby-plugin-gatsby-cloud": "^2.9.1",
@@ -14,6 +15,7 @@
     "gatsby-plugin-react-helmet": "^4.9.0",
     "gatsby-plugin-sass": "^4.10.0",
     "gatsby-plugin-sharp": "^3.9.0",
+    "gatsby-plugin-styled-components": "^4.10.0",
     "gatsby-source-filesystem": "^3.9.0",
     "gatsby-source-shopify": "^5.1.0",
     "gatsby-transformer-sharp": "^3.9.0",
